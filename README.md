@@ -6,6 +6,16 @@ LightsOut is a Progressive Web App (PWA) for following motorsports events across
 
 **Live app:** https://lightsout-notify.vercel.app
 
+## Install LightsOut as a PWA
+
+LightsOut can be installed from a supported browser and opened from your Home Screen or apps list, like an app.
+
+- **iPhone or iPad:** Open the [LightsOut app](https://lightsout-notify.vercel.app) in **Safari**, tap **Share**, choose **Add to Home Screen**, then tap **Add**. If the **Open as Web App** option is shown, enable it.
+- **Android:** Open LightsOut in **Chrome**, tap the three-dot menu, choose **Install app** or **Add to Home screen**, and follow the prompts.
+- **Desktop (Chrome or Edge):** Open LightsOut and select the install icon in the address bar if it appears. Otherwise, open the browser menu and choose **Install LightsOut** or **Install this site as an app**.
+
+Install options vary by browser and device. For the best results, open the link directly in your browser rather than inside another app's built-in browser.
+
 ## Features
 
 - **Upcoming events:** Browse upcoming motorsports events and explore events by series and year.
@@ -19,14 +29,14 @@ LightsOut is a Progressive Web App (PWA) for following motorsports events across
 
 ## Architecture
 
-| Area | Technology | Responsibility |
-| --- | --- | --- |
-| Frontend | React, Vite, JavaScript | PWA interface, event browsing, calendar, notifications, and user preferences |
-| Backend | Node.js, Express | HTTP API and application routes |
-| Database | PostgreSQL (`pg`) | Application data, including events and notifications |
-| Data ingestion | Node.js scrapers and series-specific providers | Collecting and updating motorsports event and schedule data |
-| Push notifications | `web-push`, service worker | Browser push subscription and delivery support |
-| Frontend hosting | Vercel | Hosts the live PWA |
+| Area               | Technology                                     | Responsibility                                                               |
+| ------------------ | ---------------------------------------------- | ---------------------------------------------------------------------------- |
+| Frontend           | React, Vite, JavaScript                        | PWA interface, event browsing, calendar, notifications, and user preferences |
+| Backend            | Node.js, Express                               | HTTP API and application routes                                              |
+| Database           | PostgreSQL (`pg`)                              | Application data, including events and notifications                         |
+| Data ingestion     | Node.js scrapers and series-specific providers | Collecting and updating motorsports event and schedule data                  |
+| Push notifications | `web-push`, service worker                     | Browser push subscription and delivery support                               |
+| Frontend hosting   | Vercel                                         | Hosts the live PWA                                                           |
 
 ## Repository layout
 
@@ -109,19 +119,19 @@ See `pwa-react/package.json` for the frontend scripts.
 
 The Express server mounts route groups for these resources:
 
-| Route | Purpose |
-| --- | --- |
-| `/events` | Events by year, upcoming events, events by series, event details, and event schedules |
-| `/series` | Racing-series information |
-| `/calendar` | Calendar data |
-| `/units` | Event/session schedule data |
-| `/schedule` | Next, live, today, and week schedule views |
-| `/notifications` | Notifications and read-state updates |
-| `/users` | User-related endpoints |
-| `/user-preferences` | User preference endpoints |
-| `/push` | Push subscription endpoints |
-| `/api/cron`, `/push-cron` | Scheduled jobs and notification processing |
-| `/health` | Health check |
+| Route                     | Purpose                                                                               |
+| ------------------------- | ------------------------------------------------------------------------------------- |
+| `/events`                 | Events by year, upcoming events, events by series, event details, and event schedules |
+| `/series`                 | Racing-series information                                                             |
+| `/calendar`               | Calendar data                                                                         |
+| `/units`                  | Event/session schedule data                                                           |
+| `/schedule`               | Next, live, today, and week schedule views                                            |
+| `/notifications`          | Notifications and read-state updates                                                  |
+| `/users`                  | User-related endpoints                                                                |
+| `/user-preferences`       | User preference endpoints                                                             |
+| `/push`                   | Push subscription endpoints                                                           |
+| `/api/cron`, `/push-cron` | Scheduled jobs and notification processing                                            |
+| `/health`                 | Health check                                                                          |
 
 The API also includes internal operational routes. Check the route files for exact parameters and request/response formats.
 
@@ -139,4 +149,4 @@ LightsOut helps motorsports fans keep track of upcoming events and schedules acr
 
 ---
 
-*LightsOut is an independent project and is not affiliated with or endorsed by any racing series or governing body. Series and event coverage depends on available data sources.*
+_LightsOut is an independent project and is not affiliated with or endorsed by any racing series or governing body. Series and event coverage depends on available data sources._
